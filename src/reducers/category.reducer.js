@@ -83,7 +83,7 @@ const categoryReducer =  (state = initState, action) => {
         case categoryConstants.ADD_NEW_CATEGORY_SUCCESS :
             const category = action.payload.category;
             const updatedCategories = buildNewCategories(category.parentId, state.categories, category);
-            console.log("after new category added..", updatedCategories);
+            // console.log("after new category added..", updatedCategories);
 
             state = {
                 ...state,

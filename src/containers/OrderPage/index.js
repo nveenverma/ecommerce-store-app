@@ -21,7 +21,7 @@ const OrderPage = (props) => {
   }, []);
 
   console.log(user);
-  console.log("Token from OrderPage : ", localStorage.getItem('token'))
+  // console.log("Token from OrderPage : ", localStorage.getItem('token'))
 
   return (
     <Layout>

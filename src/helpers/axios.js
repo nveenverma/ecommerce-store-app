@@ -13,19 +13,16 @@ const axiosInstance = axios.create({
 }); 
 
 axiosInstance.interceptors.request.use((req) => {
-    console.log("Came to interceptors, currently req is : ", req.url, req.headers.authorization)
     const { auth } = store.getState();
     if (auth.token) {
         req.headers.authorization = `Bearer ${auth.token}`;
     }
-    console.log("Came to interceptors, modified req is : ", req.url, req.headers.authorization)
     return req;
 })
 
 axiosInstance.interceptors.response.use(
     res => { return res },
     error => {
-        console.log("Error from axios interceptors in Frontend : ", error.response)
         const status = error.response ? error.response.status : 500;
         if (status && status === 500) {
             localStorage.clear()

@@ -29,13 +29,13 @@ const CartPage = (props) => {
 
     const onQuantityIncrement = (_id, qty) => {
         const { name, price, img } = cartItems[_id];
-        console.log("params from onQuantityIncrement function from CartPage : ", {_id, qty})
+        // console.log("params from onQuantityIncrement function from CartPage : ", {_id, qty})
         dispatch(addToCart({ _id, name, price, img }, 1));
     }
     
     const onQuantityDecrement = (_id, qty) => {
         const { name, price, img } = cartItems[_id];
-        console.log("params from onQuantityDecrement function from CartPage : ", {_id, qty})
+        // console.log("params from onQuantityDecrement function from CartPage : ", {_id, qty})
         dispatch(addToCart({ _id, name, price, img }, -1));
     }
 

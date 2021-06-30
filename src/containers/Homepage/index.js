@@ -7,7 +7,7 @@ import "./style.css";
 
 function Homepage() {
 
-    console.log("Token from HomePage : ", localStorage.getItem('token'))
+    // console.log("Token from HomePage : ", localStorage.getItem('token'))
 
 	return (
 		<div>
