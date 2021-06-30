@@ -8,7 +8,6 @@ import { IoIosArrowForward } from "react-icons/io";
 import Card from "../../components/UI/Card";
 import { Breed } from "../../components/MaterialUI";
 import Layout from "../../components/Layout";
-import { generatePublicUrl } from "../../urlConfig";
 import "./style.css";
 
 
@@ -78,7 +77,7 @@ const OrderPage = (props) => {
                       <div className="orderImgContainer">
                         <img
                           className="orderImg"
-                          src={generatePublicUrl(item.productId.productPictures[0].img)}
+                          src={item.productId.productPictures[0].img}
                           alt="Displaying Ordered Items"
                         />
                       </div>

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 
 import Card from "../../../components/UI/Card"
 import { getProductsBySlug } from '../../../actions';
-import { generatePublicUrl } from "../../../urlConfig"
 import Rating from "../../../components/UI/Rating";
 import Price from "../../../components/UI/Price";
 import { MaterialButton } from '../../../components/MaterialUI';
@@ -59,7 +58,7 @@ const ProductStore = (props) => {
                 >
                   <div className="productImgContainer">
                     <img 
-                      src={generatePublicUrl(product.productPictures[0].img)} 
+                      src={product.productPictures[0].img} 
                       alt="" 
                     />
                   </div>

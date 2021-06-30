@@ -5,7 +5,6 @@ import { BiRupee } from "react-icons/bi";
 
 import Layout from "../../components/Layout";
 import { MaterialButton } from "../../components/MaterialUI";
-import { generatePublicUrl } from "../../urlConfig";
 import { getProductDetailsById, addToCart } from "../../actions";
 import "./style.css";
 import { useState } from "react";
@@ -53,7 +52,7 @@ const ProductDetailsPage = (props) => {
 							(thumb, index) => (
 								<div key={index} className="thumbnail">
 									<img
-										src={generatePublicUrl(thumb.img)}
+										src={thumb.img}
 										alt={thumb.img}
 									/>
 								</div>
@@ -63,7 +62,7 @@ const ProductDetailsPage = (props) => {
 					<div className="productDescContainer">
 						<div className="productDescImgContainer">
 							<img
-								src={generatePublicUrl(product.productDetails.productPictures[0].img)}
+								src={product.productDetails.productPictures[0].img}
 								alt={`${product.productDetails.productPictures[0].img}`}
 							/>
 						</div>
