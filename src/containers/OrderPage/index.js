@@ -68,39 +68,44 @@ const OrderPage = (props) => {
               {
                 order.items.map((item) => (
                   <Card 
-                    // className='flexRow sb'
                     style={{ display: "block", margin: "5px 0" }}
                   >
                     <div
                       className="orderItemContainer"
                     >
-                      <div className="orderImgContainer">
+                      <div className="infoDiv">
                         <img
                           className="orderImg"
                           src={item.productId.productPictures[0].img}
                           alt="Displaying Ordered Items"
                         />
                       </div>
-                      <div className='grow'>
-                        <div className="orderRow">
-                          <p className="orderName orderedItemTitles">Item Ordered</p>
-                          <p className="orderPrice orderedItemTitles">Amount</p>
+                      <div className="infoDiv">
+                          <p className="orderedItemTitles">Item Ordered</p>
+                          <div className="orderName">
+                            {item.productId.name}
+                          </div>
+                      </div>
+                      <div className="infoDiv">
+                          <p className="orderedItemTitles">Amount</p>
+                          <div className="orderPrice">
+                            <BiRupee />
+                            {item.payablePrice}
+                          </div>
+                      </div>
+                      <div className="infoDiv">
                           <p className='orderedItemTitles'>Payment Status</p>
+                        <div>{order.paymentStatus}</div>
+                      </div>
+                      {/* <div className='grow'>
+                        <div className="orderRow">
                         </div>
                         <div 
                           style={{ marginTop: "-10px" }}
                           className="orderRow"
                         >
-                          <div className="orderName">
-                            {item.productId.name}
-                          </div>
-                          <div className="orderPrice">
-                            <BiRupee />
-                            {item.payablePrice}
-                          </div>
-                          <div>{order.paymentStatus}</div>
                         </div>
-                      </div>
+                      </div> */}
 
                     </div>
                   </Card>
