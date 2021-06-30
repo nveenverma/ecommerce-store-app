@@ -68,8 +68,8 @@ const CartPage = (props) => {
                     headerLeft={`My Cart`}
                     headerRight={<div>Deliver to</div>}
                     style={{ 
-                        width : 'calc(100% - 400px)', 
-                        overflow : 'hidden',
+                        // maxWidth : '500px', 
+                        marginBottom : '20px'
                     }}
                 >
                     {

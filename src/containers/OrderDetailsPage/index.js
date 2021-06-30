@@ -55,17 +55,8 @@ const OrderDetailsPage = (props) => {
 
   return (
     <Layout>
-      <div
-        style={{
-          width: "1160px",
-          margin: "10px auto",
-        }}
-      >
-        <Card
-          style={{
-            margin: "10px 0",
-          }}
-        >
+      <div className="orderDetailsContainer">
+        <Card>
           <div className="delAdrContainer">
             <div className="delAdrDetails">
               <div className="delTitle">Delivery Address</div>
@@ -83,19 +74,16 @@ const OrderDetailsPage = (props) => {
         </Card>
 
         {orderDetails.items.map((item, index) => (
-          <Card
-            style={{ display: "flex", padding: "20px 0", margin: "10px 0" }}
-          >
-            <div className="flexRow">
+          <Card className="orderTrackerDiv">
+            <div className="itemContainer">
               <div className="delItemImgContainer">
                 <img src={item.productId.productPictures[0].img} alt="" />
               </div>
-              <div style={{ width: "250px" }}>
+              <div style={{ width: "100px" }}>
                 <div className="delItemName">{item.productId.name}</div>
-                {/* <Price value={item.payablePrice} /> */}
               </div>
             </div>
-            <div style={{ padding: "25px 50px" }}>
+            <div className='trackingContainer'>
               <div className="orderTrack">
                 {orderDetails.orderStatus.map((status) => (
                   <div

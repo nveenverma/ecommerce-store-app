@@ -1,11 +1,15 @@
 .checkoutContainer{
-    width: calc(100% - 400px);
+    width: 100%;
+    min-width: 380px;
+    margin-bottom : '20px';
+    max-width: 1260px;
 }
 .checkoutStep{
     box-sizing: border-box;
     background: #fff;
     box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
+    width: 100%;
 }
 .checkoutHeader{
     width: 100%;
@@ -80,4 +84,11 @@
     font-size: 12px;
     letter-spacing: 1px;
     line-height: 18px;
+}
+
+.cartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: stretch; */
+    
 }

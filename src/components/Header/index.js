@@ -241,23 +241,17 @@ const Header = (props) => {
 				{/* logo ends here */}
 
 				{/* search component */}
-				<div
-					style={{
-						padding: "0 10px",
-					}}
-				>
-					<div className="searchInputContainer">
-						<input
-							className="searchInput"
-							placeholder={"search for products, brands and more"}
+				<div className="searchInputContainer">
+					<input
+						className="searchInput"
+						placeholder={"search for products, brands and more"}
+					/>
+					<div className="searchIconContainer">
+						<IoIosSearch
+							style={{
+								color: "#2874f0",
+							}}
 						/>
-						<div className="searchIconContainer">
-							<IoIosSearch
-								style={{
-									color: "#2874f0",
-								}}
-							/>
-						</div>
 					</div>
 				</div>
 				{/* search component ends here */}

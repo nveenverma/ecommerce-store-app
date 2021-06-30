@@ -5,7 +5,7 @@ const PriceDetails = (props) => {
     return (
         <Card
             headerLeft={"PriceDetails"}
-            style={{maxWidth : "380px"}}
+            style={{width: '100%'}}
         >
             <div
                 style={{

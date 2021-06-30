@@ -1,3 +1,11 @@
+.orderDetailsContainer {
+    max-width: 1160px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 .delAdrContainer{
     display: flex;
     box-sizing: border-box;
@@ -27,11 +35,16 @@
     padding: 20px;
 }
 
+.itemContainer {
+    min-width: 120px;
+    margin-left: 10px;
+}
 .delItemImgContainer{
     width: 75px;
     height: 75px;
     overflow: hidden;
     text-align: center;
+    margin-bottom: 10px;
 }
 .delItemImgContainer > img{
     max-width: 100%;
@@ -39,12 +52,29 @@
     object-fit: contain;
 }
 
-.orderTrack{
-    width: 400px;
+.trackingContainer {
+    padding: 40px;
+    min-width: 300px;
+}
+
+.orderTrackerDiv {
     display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0; 
+    margin: 10px 0;
+    background: white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.orderTrack{
+    min-width: 300px;
+    display: flex;
+    margin: 20px;
 }
 .orderStatus{
-    width: 33.33%;
+    width: 25%;
     height: 3px;
     background: #777;
     position: relative;

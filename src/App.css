@@ -2,6 +2,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html, body, #app, #app>div {
+    height: 100%;
+    /* overflow: auto; */
+}
+
 body { 
     background: #f1f3f6;
 }

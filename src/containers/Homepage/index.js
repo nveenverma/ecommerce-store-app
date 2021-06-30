@@ -1,135 +1,96 @@
 import React from "react";
 
 import Layout from "../../components/Layout";
+import Overview from "./Overview"
 import heroImg from "../../images/hero1.jpg";
 
 import "./style.css";
 
-function Homepage() {
+function HomePage () {
+    
+    const projectFeaturesSection = [
+        {
+            title :'E-Commerce Store : ',
+            content : [
+                'User Signup / Login',
+                'Add/Delete Cart items',
+                'Add/Edit Delivery Address',            
+                'Order Placement + Checkout ',
+                'Order Summary + Tracking',
+            ]
+        },
+        {
+            
+            title :'Content Management System (CMS) :',
+            content : [
+                'Admin Signup/Login',
+                'High Level Statistics',
+                'Add/Edit/Delete Products',
+                'Add/Update/Delete Categories',
+                'Update Order Tracking Details',
+            ]
+        }
+    ]
+    const languagesSection = [
+        {
+            title :'For building Frontend :',
+            content : [
+                'HTML',
+                'CSS',
+                'JavaScript',
+                'ReactJS',
+                'Redux',
+            ]
+        },
+        {
+            title :'For building Backend :',
+            content : [
+                'NodeJS',
+                'ExpressJS',
+                'MongoDB',
+                'Postman',
+                'AWS',
+                'Heroku',
+            ]
+        }
+    ]
 
-    // console.log("Token from HomePage : ", localStorage.getItem('token'))
+    return (
+        <div className="bigger">
+            <Layout className="layout"/>
+            <div className="jumbotron">
+                <div
+                    style={{
+                        backgroundImage: `url(${heroImg})`,                        
+                        height: '100vh',
+                        backgroundPosition: 'top',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                        backgroundColor: '#fff',
+                        overflow: 'auto',
+                        position: 'absolute',
+                        top: '0',
+                        left: '0',
+                        right: '0',
+                    }}
+                    className="bgImg"
+                >
 
-	return (
-		<div>
-			<Layout />
-			<div
-				style={{
-					backgroundImage: `url(${heroImg})`,
-					backgroundColor: "#cccccc",
-					height: "625px",
-					backgroundPosition: "top",
-					backgroundRepeat: "no-repeat",
-					backgroundSize: "cover",
-					position: "relative",
-					// filter: "blur(0.8px)",
-					// -webkit-filter: blur(8px);
-				}}
-			></div>
-            <div className="overview1">
-                <div className="innerContainer">                    
-                    <p className="title">
-                        Project Name & Features:
-                    </p>
-                    <div>
-                        <div className="flexRow" style={{textAlign: 'left'}}>
-                            <p style={{ width: '30%' }} >
-                                <strong>E-Commerce Store : </strong>
-                            </p>  
-                            <div 
-                                className="flexRow"
-                                style={{ 
-                                    minWidth: '65%',
-                                    justifyContent: 'space-around'
-                                }}
-                                >                          
-                                <div>
-                                    <p className="minusBtmMargin">User Signup / Login</p>
-                                    <p className="minusBtmMargin">Add/Delete Cart items</p>
-                                    <p className="minusBtmMargin">Add/Edit Delivery Address</p>
-                                </div>
-                                <div>
-                                    <p className="minusBtmMargin">Order Placement + Checkout </p>
-                                    <p className="minusBtmMargin">Order Summary + Tracking</p>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        <div className="flexRow" style={{textAlign: 'left'}}>
-                            <p style={{ width: '30%' }} >
-                                <strong>Content Management System (CMS) :</strong>
-                            </p>
-                            <div 
-                                className="flexRow"
-                                style={{ 
-                                    minWidth: '65%',
-                                    justifyContent: 'space-around'
-                                }}
-                            >
-                                <div>
-                                    <p className="minusBtmMargin">Admin Signup/Login</p>
-                                    <p className="minusBtmMargin">High Level Statistics</p>
-                                    <p className="minusBtmMargin">Add/Edit/Delete Products</p>
-                                </div>
-                                <div>
-                                    <p className="minusBtmMargin">Add/Update/Delete Categories</p>
-                                    <p className="minusBtmMargin">Update Order Tracking Details</p>
-                                </div>
-                            </div>
-                        </div>              
+                </div>
+                    <div className="mainContainer" >
+                        <Overview 
+                            title='Project Name & Features'
+                            sections={projectFeaturesSection}
+                            />
+                        <Overview 
+                            title='Languages and Tools Used'
+                            sections={languagesSection}
+                        />
                     </div>
-                </div>
+
             </div>
-			<div className="overview2">
-                <div className="innerContainer">
-                    <p className="title">
-                        Languages and Tools Used
-                    </p>
-                    <div>
-                        <div className="flexRow sb" style={{textAlign: 'left'}}>
-                            <p style={{ maxWidth : '30%'}} >
-                                <strong>For building Frontend :</strong>
-                            </p>
-                            <div 
-                                className="flexRow sb"
-                                style={{ width : '50%'}}
-                            >
-                                <div>
-                                    <p className="minusBtmMargin">HTML</p>
-                                    <p className="minusBtmMargin">CSS</p>
-                                    <p className="minusBtmMargin">JavaScript</p>
-                                </div>
-                                <div>
-                                    <p className="minusBtmMargin">ReactJS</p>
-                                    <p className="minusBtmMargin">Redux</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <br />
-                        <div className="flexRow sb" style={{textAlign: 'left'}}>
-                            <p style={{ maxWidth : '30%'}} >
-                                <strong>For building Backend :</strong>
-                            </p>
-                            <div
-                                className="flexRow sb"
-                                style={{ width : '50%'}}
-                            >
-                                <div>
-                                    <p className="minusBtmMargin">NodeJS</p>
-                                    <p className="minusBtmMargin">ExpressJS</p>
-                                    <p className="minusBtmMargin">MongoDB</p>
-                                </div>
-                                <div>
-                                    <p className="minusBtmMargin">Postman</p>
-                                    <p className="minusBtmMargin">AWS</p>
-                                    <p className="minusBtmMargin">Heroku</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                
-                </div>
-			</div>
-		</div>
-	);
+        </div>
+    )
 }
 
-export default Homepage;
+export default HomePage

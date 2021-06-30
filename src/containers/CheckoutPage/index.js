@@ -199,7 +199,7 @@ const CheckoutPage = (props) => {
 
 	return (
 		<Layout>
-			<div className="cartContainer" style={{ alignItems: "flex-start" }}>
+			<div className="cartContainer" style={{  }}>
 				<div className="checkoutContainer">
 					<CheckoutStep
 						stepNumber={"1"}
