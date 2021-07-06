@@ -17,6 +17,7 @@ const ProductDetailsPage = (props) => {
 	const [productName, setProductName] = useState('Product Name')
 	const [categoryName, setCategoryName] = useState('Category 1')
 	const [subCategoryName, setSubCategoryName] = useState('Category 2')
+	const [mainImage, setMainImage] = useState("")
 
 	console.log("Categories : ", category)
 
@@ -30,9 +31,12 @@ const ProductDetailsPage = (props) => {
 	}, []);
 	
 	useEffect(() => {
-		console.log("Product Details returned : ", product.productDetails)		
-		product.productDetails.name && setProductName(product.productDetails.name)
-		if (product.productDetails.category) {
+		console.log("Product Details returned : ", product.productDetails)	
+		
+		// Set State for various variables once Product Details are returned
+		if (product.productDetails) {
+			setProductName(product.productDetails.name)
+			setMainImage(product.productDetails.productPictures[0].img)
 			setCategoryName(category.categories.filter(cat => cat._id === product.productDetails.category.parentId)[0].name)
 			setSubCategoryName(product.productDetails.category.name)
 		}
@@ -50,7 +54,11 @@ const ProductDetailsPage = (props) => {
 					<div className="verticalImageStack">
 						{product.productDetails.productPictures.map(
 							(thumb, index) => (
-								<div key={index} className="thumbnail">
+								<div 
+									key={index} 
+									className="thumbnail"
+									onClick={() => setMainImage(thumb.img)}
+								>
 									<img
 										src={thumb.img}
 										alt={thumb.img}
@@ -62,8 +70,8 @@ const ProductDetailsPage = (props) => {
 					<div className="productDescContainer">
 						<div className="productDescImgContainer">
 							<img
-								src={product.productDetails.productPictures[0].img}
-								alt={`${product.productDetails.productPictures[0].img}`}
+								src={mainImage}
+								alt={`${mainImage}`}
 							/>
 						</div>
 
@@ -91,7 +99,10 @@ const ProductDetailsPage = (props) => {
 					</div>
 				</div>
 				<div
-					style={{marginLeft : '50px'}}
+					style={{
+						marginLeft : '50px'
+					}}
+					className="productZoomContainer"
 				>
 					{/* home > category > subCategory > productName */}
 					<div 

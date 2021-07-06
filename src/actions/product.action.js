@@ -11,7 +11,7 @@ export const getProductsBySlug = (slug) => {
                 type : productConstants.GET_PRODUCTS_BY_SLUG,
                 payload : res.data 
             })
-            console.log(res.data)
+            // console.log(res.data)
         } else {
             console.log("error occured")
         }

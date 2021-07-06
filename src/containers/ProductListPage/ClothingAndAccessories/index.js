@@ -16,11 +16,9 @@ const ClothingAndAccessories = (props) => {
   const product = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const { match } = props;
-    dispatch(getProductsBySlug(match.params.slug));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useEffect(() => {      
+      dispatch(getProductsBySlug(props.match.params.slug));    
+  }, [props.match.params.slug]);
 
   return (
     <div style={{ padding: "10px" }}>
@@ -31,8 +29,8 @@ const ClothingAndAccessories = (props) => {
           display: "flex",
         }}
       >
-        {product.products.map((product) => (
-          <div className="caContainer">
+        {product.products.map((product, index) => (
+          <div key={index} className="caContainer">
             <Link
               className="caImgContainer"
               to={`/${product.slug}/${product._id}/p`}

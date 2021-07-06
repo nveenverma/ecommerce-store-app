@@ -18,11 +18,9 @@ const ProductStore = (props) => {
     }
     const dispatch = useDispatch();
   
-    useEffect(() => {
-      const { match } = props;
-      dispatch(getProductsBySlug(match.params.slug));
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    useEffect(() => {      
+      dispatch(getProductsBySlug(props.match.params.slug));    
+    }, [props.match.params.slug]);
   
     return (
       <>
@@ -44,6 +42,7 @@ const ProductStore = (props) => {
               width: "calc(100% - 40px)",
               margin: "20px",
             }}
+            key={index}
           >
             <div style={{ display: "flex" }}>
               {product.productsByPrice[key].map((product) => (
